@@ -9,6 +9,6 @@ namespace CinemaProjectWpf.ViewModel
 {
     public class MenuButtonUcViewModel:BaseViewModel
     {
-        public MenuButtonClass Menubutton { get; set; }
+        public MenuButtonClass MenuButton { get; set; }
     }
 }

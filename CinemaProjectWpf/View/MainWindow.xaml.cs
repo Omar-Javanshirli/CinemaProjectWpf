@@ -25,7 +25,7 @@ namespace CinemaProjectWpf
         {
             InitializeComponent();
 
-            var vm = new AppViewModel();
+            var vm = new AppViewModel(this);
             vm.MenuStackPanel = menuButtonSp;
             this.DataContext = vm;
         }

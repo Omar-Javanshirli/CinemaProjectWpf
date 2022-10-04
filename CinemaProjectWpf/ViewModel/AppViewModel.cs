@@ -16,21 +16,22 @@ namespace CinemaProjectWpf.ViewModel
         public FakeRepo MenuButtonRepository { get; set; }
         public ObservableCollection<MenuButtonClass> MenuButtons { get; set; }
         public StackPanel MenuStackPanel { get; set; }
-        
+        public MainWindow _mainWindow;
 
-        public AppViewModel()
+        public AppViewModel(MainWindow mainWindow)
         {
+            _mainWindow = mainWindow;
             MenuButtonRepository = new FakeRepo();
             MenuButtons = new ObservableCollection<MenuButtonClass>(MenuButtonRepository.GetAllButton());
 
             foreach (var item in MenuButtons)
             {
                 MenuButtonUcViewModel menuButtonUcViewModel = new MenuButtonUcViewModel();
-                menuButtonUcViewModel.Menubutton = item;
+                menuButtonUcViewModel.MenuButton = item;
                 MenuButtonUc menuButtonUc = new MenuButtonUc();
                 menuButtonUc.DataContext = menuButtonUcViewModel;
 
-                MenuStackPanel.Children.Add(menuButtonUc);
+                _mainWindow.menuButtonSp.Children.Add(menuButtonUc);
             }
         }
     }

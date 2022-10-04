@@ -26,7 +26,7 @@
                     <Label Content="Move." FontSize="25" Foreground="#0393e6" Canvas.Left="30" Canvas.Top="70" FontFamily="Verdana" FontStyle="Italic"/>
                     <Label Content="time" FontSize="25" Foreground="White" Canvas.Left="103" Canvas.Top="70" FontFamily="Verdana" FontStyle="Italic"/>
                 </Canvas>
-                <StackPanel Grid.Row="1" Margin="0 10 0 0" x:Name="menuButtonSp">
+                <StackPanel Grid.Row="1" Margin="0 20 0 0" x:Name="menuButtonSp">
                     
                 </StackPanel>
             </Grid>

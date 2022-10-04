@@ -15,10 +15,10 @@
                         <ColumnDefinition Width="6*"/>
                     </Grid.ColumnDefinitions>
                     <Image Source="{Binding MenuButton.Image,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
-                           HorizontalAlignment="Center" VerticalAlignment="Center" Width="25"/>
+                           HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" />
                     <Canvas Grid.Column="1" >
                         <TextBlock Text="{Binding MenuButton.Text,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
-                                   Style="{StaticResource menuTitle}" VerticalAlignment="Center" Canvas.Left="20" FontSize="22"/>
+                                   Style="{StaticResource menuTitle}" VerticalAlignment="Center" Canvas.Left="20" FontSize="15"/>
                     </Canvas>
                 </Grid>
             </Button>
