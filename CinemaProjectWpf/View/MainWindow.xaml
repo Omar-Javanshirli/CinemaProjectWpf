@@ -61,21 +61,16 @@
                     </Grid>
                 </Border>
                 
-                <Border Name="ReceiverColor2" BorderBrush="#FF96B2E4"  CornerRadius="15" Canvas.Right="10" Canvas.Top="95">
+                <Border Name="ReceiverColor2" BorderBrush="#FF96B2E4"  CornerRadius="15" Canvas.Right="10" Canvas.Top="90">
                     <Grid>
                         <Border Name="Mask2"
-                                Background="White"
+                                Background="Transparent"
                                 BorderBrush="#FF3B5998"
-                                BorderThickness=".5"
-                                CornerRadius="13"
+                                CornerRadius="13" Margin="0,0,71,110"
                                 >
                         </Border>
                         <StackPanel>
-                            <Image Name="Receiver2" Source="/Image/arrow.jpg"/>
-                            <Canvas>
-                                <TextBlock Text="Dark Phonenix" Foreground="#c6c6c7" FontSize="15" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="20" Canvas.Top="-50"/>
-                                <TextBlock Text="Action Advantures Science Fiction" Foreground="Gray" FontSize="10" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="20" Canvas.Top="-30"/>
-                            </Canvas>
+                            <Image Name="Receiver2" Source="/Image/Morbius.jpg" Height="175" Width="250" Stretch="Fill"/>
                             <StackPanel.OpacityMask>
                                 <VisualBrush Visual="{Binding ElementName=Mask}" />
                             </StackPanel.OpacityMask>
