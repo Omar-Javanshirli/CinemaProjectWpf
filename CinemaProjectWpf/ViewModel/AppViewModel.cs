@@ -15,16 +15,17 @@ namespace CinemaProjectWpf.ViewModel
 {
     public class AppViewModel:BaseViewModel
     {
-        public FakeRepo MenuButtonRepository { get; set; }
+        public FakeRepo DataBase { get; set; }
         public ObservableCollection<MenuButtonClass> MenuButtons { get; set; }
-        public StackPanel MenuStackPanel { get; set; }
+        public ObservableCollection<Movie> Movies { get; set; }
         public MainWindow _mainWindow;
 
         public AppViewModel(MainWindow mainWindow)
         {
             _mainWindow = mainWindow;
-            MenuButtonRepository = new FakeRepo();
-            MenuButtons = new ObservableCollection<MenuButtonClass>(MenuButtonRepository.GetAllButton());
+            DataBase = new FakeRepo();
+            MenuButtons = new ObservableCollection<MenuButtonClass>(DataBase.GetAllButton());
+            Movies = new ObservableCollection<Movie>(DataBase.GetAllMovie());
 
             int count = 0;
             foreach (var item in MenuButtons)
@@ -46,6 +47,25 @@ namespace CinemaProjectWpf.ViewModel
                     label.FontFamily = new FontFamily("Verdana");
                     _mainWindow.menuButtonSp.Children.Add(label);
 
+                }
+            }
+
+            count = 0;
+            foreach (var item in Movies)
+            {
+                MovieCellViewModel view = new MovieCellViewModel();
+                view.Movie = item;
+                MovieCellUc uc = new MovieCellUc();
+                uc.DataContext = view;
+
+                if (count < 5)
+                {
+                    _mainWindow.filmWrap.Children.Add(uc);
+                    count++;
+                }
+                else
+                {
+                    _mainWindow.filmWrap2.Children.Add(uc);
                 }
             }
         }

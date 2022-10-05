@@ -69,6 +69,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserContorls\MovieCellUc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,13 +83,18 @@
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\MenuButtonClass.cs" />
+    <Compile Include="Model\Movie.cs" />
     <Compile Include="Repository\FakeRepo.cs" />
     <Compile Include="UserContorls\MenuButtonUc.xaml.cs">
       <DependentUpon>MenuButtonUc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserContorls\MovieCellUc.xaml.cs">
+      <DependentUpon>MovieCellUc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AppViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MenuButtonUcViewModel.cs" />
+    <Compile Include="ViewModel\MovieCellViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -135,6 +144,32 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\Morbius.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\laCaseDePapel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ozark2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\adam.jpg" />
+    <Resource Include="Image\breaking.jpg" />
+    <Resource Include="Image\elite.jpg" />
+    <Resource Include="Image\lupin.jpg" />
+    <Resource Include="Image\mindhunter.jpg" />
+    <Resource Include="Image\narcos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\rain2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\visaAvis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ester.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

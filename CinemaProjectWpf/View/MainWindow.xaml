@@ -78,10 +78,131 @@
                     </Grid>
                 </Border>
             </Canvas>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <WrapPanel Name="filmWrap" Grid.Row="0" Margin="10"></WrapPanel>
+                <WrapPanel Name="filmWrap2" Grid.Row="1" Margin="10"></WrapPanel>
+            </Grid>
         </Grid>
 
         <Border Grid.Column="2" Background="#222433" CornerRadius="0 20 20 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="0.6*"/>
+                </Grid.RowDefinitions>
 
+                <Canvas>
+                    <Border Width="300" Height="40" Canvas.Left="15" Canvas.Top="95" CornerRadius="10" Background="#2b2c3e">
+                        <TextBlock Background="Transparent" >
+                            <Canvas>
+                                <Label Canvas.Left="30" Content="Search..." Canvas.Top="-7" Foreground="#c6c6c7"
+                                       FontSize="15" FontStyle="Italic" FontFamily="Verdana"/>
+                                <Image Source="/Image/search.png" Width="20" Canvas.Left="260" Canvas.Top="-3"/>
+                            </Canvas>
+                        </TextBlock>
+                    </Border>
+
+                    <WrapPanel Width="300" Height="110" Canvas.Left="20" Canvas.Top="150">
+                        <Button Style="{StaticResource myButton2}" Width="90" Height="40" Margin="5" Content="Hollywood"/>
+                        <Button Style="{StaticResource myButton2}" Width="70" Height="40" Margin="5" Content="Desney"/>
+                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="Pixar"/>
+                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="viu"/>
+                        <Button Style="{StaticResource myButton2}" Width="110" Height="40" Margin="5" Content="Universal Studio"/>
+                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="Netflix"/>
+                        <Button Style="{StaticResource myButton2}" Width="80" Height="40" Margin="5" Content="Bollywood"/>
+                    </WrapPanel>
+                </Canvas>
+
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Border Width="300" Height="120">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border CornerRadius="8,8,8,8" Panel.ZIndex="1">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Image/laCaseDePapel.jpg"/>
+                                </Border.Background>
+                            </Border>
+                            <Border CornerRadius="10" Grid.Column="1" Background="#2b2c3e" Margin="-10 0 0 0">
+                                <Canvas>
+                                    <TextBlock Canvas.Left="30" Canvas.Top="20" Text="La Case De Papel" Foreground="#c6c6c7"
+                                               FontStyle="Italic" FontFamily="Verdana"/>
+                                    <TextBlock Canvas.Left="30" Canvas.Top="50" Foreground="gray" FontSize="10"
+                                               FontStyle="Italic" FontFamily="Verdana" TextWrapping="Wrap" Width="150" Height="48"
+                                               Text="'The House of Paper') is a Spanish heist crime drama television series created by Álex Pina."/>
+                                </Canvas>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <Border Width="300" Height="120" Grid.Row="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border CornerRadius="8,8,8,8" Panel.ZIndex="1">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Image/visaAvis.jpg"/>
+                                </Border.Background>
+                            </Border>
+                            <Border CornerRadius="10" Grid.Column="1" Background="#2b2c3e" Margin="-10 0 0 0">
+                                <Canvas>
+                                    <TextBlock Canvas.Left="30" Canvas.Top="20" Text="Visa A Vis" Foreground="#c6c6c7"
+                                               FontStyle="Italic" FontFamily="Verdana"/>
+                                    <TextBlock Canvas.Left="30" Canvas.Top="50" Foreground="gray" FontSize="10"
+                                               FontStyle="Italic" FontFamily="Verdana" TextWrapping="Wrap" Width="150" Height="48"
+                                               Text="The Visa Information System (VIS) is a system for the exchange of visa data between Schengen State"/>
+                                </Canvas>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="2">
+                    <Border Width="300" Height="120" Grid.Row="1" Margin="0 -20 0 0">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border CornerRadius="8,8,8,8" Panel.ZIndex="1">
+                                <Border.Background>
+                                    <ImageBrush Stretch="Fill" ImageSource="/Image/mindhunter.jpg"/>
+                                </Border.Background>
+                            </Border>
+                            <Border CornerRadius="10" Grid.Column="1" Background="#2b2c3e" Margin="-10 0 0 0">
+                                <Canvas>
+                                    <TextBlock Canvas.Left="30" Canvas.Top="20" Text="MindHunter" Foreground="#c6c6c7"
+                                               FontStyle="Italic" FontFamily="Verdana"/>
+                                    <TextBlock Canvas.Left="30" Canvas.Top="50" Foreground="gray" FontSize="10"
+                                               FontStyle="Italic" FontFamily="Verdana" TextWrapping="Wrap" Width="150" Height="48"
+                                               Text="Mindhunter is based on the 1996 book Mind Hunter: Inside the FBI's Elite Serial Crime Unit."/>
+                                </Canvas>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
         </Border>
     </Grid>
 </Window>
