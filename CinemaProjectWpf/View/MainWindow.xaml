@@ -6,7 +6,7 @@
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:CinemaProjectWpf" xmlns:local1="clr-namespace:CinemaProjectWpf.UserContorls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
+        Title="MainWindow" Height="700" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" 
         AllowsTransparency="True" WindowStyle="None" Background="Transparent">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -26,11 +26,67 @@
                     <Label Content="Move." FontSize="25" Foreground="#0393e6" Canvas.Left="30" Canvas.Top="70" FontFamily="Verdana" FontStyle="Italic"/>
                     <Label Content="time" FontSize="25" Foreground="White" Canvas.Left="103" Canvas.Top="70" FontFamily="Verdana" FontStyle="Italic"/>
                 </Canvas>
-                <StackPanel Grid.Row="1" Margin="0 20 0 0" x:Name="menuButtonSp">
-                    
-                </StackPanel>
+
+                <StackPanel Grid.Row="1" Margin="0 50 0 0" x:Name="menuButtonSp"></StackPanel>
             </Grid>
         </Border>
-        
+
+        <Grid Grid.Column="1" Background="#1d1c2a">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Canvas>
+                <TextBlock Text="Discovers" Foreground="#c6c6c7" FontSize="30" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="24" Canvas.Top="20"/>
+                <TextBlock Text="Popullar Film" Foreground="#c6c6c7" FontSize="20" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="24" Canvas.Bottom="20"/>
+                <Border Name="ReceiverColor" BorderBrush="#FF96B2E4"  CornerRadius="15" Canvas.Left="20" Canvas.Top="90">
+                    <Grid>
+                        <Border Name="Mask"
+                                    Background="White"
+                                    BorderBrush="#FF3B5998"
+                                    BorderThickness=".5"
+                                    CornerRadius="13">
+                        </Border>
+                        <StackPanel>
+                            <Image Name="Receiver" Source="/Image/x-men2.jpg"/>
+                            <Canvas>
+                                <TextBlock Text="Dark Phonenix" Foreground="#c6c6c7" FontSize="15" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="20" Canvas.Top="-50"/>
+                                <TextBlock Text="Action Advantures Science Fiction" Foreground="Gray" FontSize="10" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="20" Canvas.Top="-30"/>
+                            </Canvas>
+                            <StackPanel.OpacityMask>
+                                <VisualBrush Visual="{Binding ElementName=Mask}" />
+                            </StackPanel.OpacityMask>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                
+                <Border Name="ReceiverColor2" BorderBrush="#FF96B2E4"  CornerRadius="15" Canvas.Right="10" Canvas.Top="95">
+                    <Grid>
+                        <Border Name="Mask2"
+                                Background="White"
+                                BorderBrush="#FF3B5998"
+                                BorderThickness=".5"
+                                CornerRadius="13"
+                                >
+                        </Border>
+                        <StackPanel>
+                            <Image Name="Receiver2" Source="/Image/arrow.jpg"/>
+                            <Canvas>
+                                <TextBlock Text="Dark Phonenix" Foreground="#c6c6c7" FontSize="15" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="20" Canvas.Top="-50"/>
+                                <TextBlock Text="Action Advantures Science Fiction" Foreground="Gray" FontSize="10" FontStyle="Italic" FontFamily="Verdana" Canvas.Left="20" Canvas.Top="-30"/>
+                            </Canvas>
+                            <StackPanel.OpacityMask>
+                                <VisualBrush Visual="{Binding ElementName=Mask}" />
+                            </StackPanel.OpacityMask>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Canvas>
+        </Grid>
+
+        <Border Grid.Column="2" Background="#222433" CornerRadius="0 20 20 0">
+
+        </Border>
     </Grid>
 </Window>

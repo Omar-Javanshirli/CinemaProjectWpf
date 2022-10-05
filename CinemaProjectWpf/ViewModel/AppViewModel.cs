@@ -7,7 +7,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace CinemaProjectWpf.ViewModel
 {
@@ -24,6 +26,7 @@ namespace CinemaProjectWpf.ViewModel
             MenuButtonRepository = new FakeRepo();
             MenuButtons = new ObservableCollection<MenuButtonClass>(MenuButtonRepository.GetAllButton());
 
+            int count = 0;
             foreach (var item in MenuButtons)
             {
                 MenuButtonUcViewModel menuButtonUcViewModel = new MenuButtonUcViewModel();
@@ -32,6 +35,18 @@ namespace CinemaProjectWpf.ViewModel
                 menuButtonUc.DataContext = menuButtonUcViewModel;
 
                 _mainWindow.menuButtonSp.Children.Add(menuButtonUc);
+                count += 1;
+                if (count == 4)
+                {
+                    Label label = new Label();
+                    label.Content = "other";
+                    label.Foreground = Brushes.LightGray;
+                    label.Margin = new System.Windows.Thickness(35,0, 0, 0);
+                    label.FontStyle = FontStyles.Italic;
+                    label.FontFamily = new FontFamily("Verdana");
+                    _mainWindow.menuButtonSp.Children.Add(label);
+
+                }
             }
         }
     }
