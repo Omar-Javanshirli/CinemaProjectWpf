@@ -122,13 +122,13 @@
                     </Border>
 
                     <WrapPanel Width="300" Height="110" Canvas.Left="20" Canvas.Top="150">
-                        <Button Style="{StaticResource myButton2}" Width="90" Height="40" Margin="5" Content="Hollywood"/>
-                        <Button Style="{StaticResource myButton2}" Width="70" Height="40" Margin="5" Content="Desney"/>
-                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="Pixar"/>
-                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="viu"/>
-                        <Button Style="{StaticResource myButton2}" Width="110" Height="40" Margin="5" Content="Universal Studio"/>
-                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="Netflix"/>
-                        <Button Style="{StaticResource myButton2}" Width="80" Height="40" Margin="5" Content="Bollywood"/>
+                        <Button Style="{StaticResource myButton2}" Width="90" Height="40" Margin="5" Content="Hollywood" Command="{Binding HollywoodCommand}"/>
+                        <Button Style="{StaticResource myButton2}" Width="70" Height="40" Margin="5" Content="Desney" Command="{Binding DesneyCommand}"/>
+                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="Pixar" Command="{Binding PixarCommand}"/>
+                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="viu" Command="{Binding ViuCommand}"/>
+                        <Button Style="{StaticResource myButton2}" Width="110" Height="40" Margin="5" Content="Universal Studio" Command="{Binding UniversalStudioCommand}"/>
+                        <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="Netflix" Command="{Binding NetflixCommand}"/>
+                        <Button Style="{StaticResource myButton2}" Width="80" Height="40" Margin="5" Content="Bollywood" Command="{Binding BollywoodCommand}"/>
                     </WrapPanel>
                 </Canvas>
 

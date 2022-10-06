@@ -25,6 +25,13 @@ namespace CinemaProjectWpf.ViewModel
         public RelayCommand SearchMosueEnterCommand { get; set; }
         public RelayCommand SearchMosueLeaveCommand { get; set; }
         public RelayCommand SearchClickCommand { get; set; }
+        public RelayCommand HollywoodCommand { get; set; }
+        public RelayCommand NetflixCommand { get; set; }
+        public RelayCommand BollywoodCommand { get; set; }
+        public RelayCommand UniversalStudioCommand { get; set; }
+        public RelayCommand PixarCommand { get; set; }
+        public RelayCommand ViuCommand { get; set; }
+        public RelayCommand Desneycommand { get; set; }
 
         public AppViewModel(MainWindow mainWindow)
         {
@@ -78,6 +85,7 @@ namespace CinemaProjectWpf.ViewModel
             CheckSearchCommand();
             SearchClick();
             AddMovieAbout(Movies);
+            AddHollywoodMoview();
         }
 
         public void CheckSearchCommand()
@@ -138,6 +146,30 @@ namespace CinemaProjectWpf.ViewModel
                     _mainWindow.row3.Children.Add(uc);
                 count++;
             }
+        }
+
+        public void AddHollywoodMoview()
+        {
+            DataBase = new FakeRepo();
+            Movies = new ObservableCollection<Movie>(DataBase.GetAllHollywoodMovie());
+            HollywoodCommand = new RelayCommand((e) =>
+              {
+                  _mainWindow.filmWrap.Children.RemoveRange(0, 5);
+
+                  foreach (var item in Movies)
+                  {
+                      var view = new MovieCellViewModel
+                      {
+                          Movie = item
+                      };
+                      var uc = new MovieCellUc();
+                      uc.DataContext = view;
+
+                      _mainWindow.filmWrap.Children.Add(uc);
+                  }
+              });
+
+
         }
 
     }

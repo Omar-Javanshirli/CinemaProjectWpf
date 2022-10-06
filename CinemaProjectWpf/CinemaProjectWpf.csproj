@@ -193,5 +193,12 @@
     <Resource Include="Image\cinema-Part.png" />
     <Resource Include="Image\moviePart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\americanBeauty.jpg" />
+    <Resource Include="Image\avatar.jpg" />
+    <Resource Include="Image\inception.jpg" />
+    <Resource Include="Image\pirates.jpg" />
+    <Resource Include="Image\spiderman.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

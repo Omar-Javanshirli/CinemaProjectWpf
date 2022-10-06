@@ -134,5 +134,31 @@ namespace CinemaProjectWpf.Repository
                 }
             };
         }
+        public List<Movie> GetAllHollywoodMovie()
+        {
+            return new List<Movie>
+            {
+                new Movie
+                {
+                    ImagePath="/Image/americanBeauty.jpg"
+                },
+                new Movie
+                {
+                    ImagePath = "/Image/spiderman.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/pirates.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/inception.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/avatar.jpg"
+                }
+            };
+        }
     }
 }
