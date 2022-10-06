@@ -85,7 +85,7 @@ namespace CinemaProjectWpf.ViewModel
             CheckSearchCommand();
             SearchClick();
             AddMovieAbout(Movies);
-            AddAllMovie();
+            MovieCommand();
 
         }
 
@@ -149,7 +149,7 @@ namespace CinemaProjectWpf.ViewModel
             }
         }
 
-        public void AddAllMovie()
+        public void MovieCommand()
         {
             DataBase = new FakeRepo();
             Movies = new ObservableCollection<Movie>(DataBase.GetAllHollywoodMovie());
