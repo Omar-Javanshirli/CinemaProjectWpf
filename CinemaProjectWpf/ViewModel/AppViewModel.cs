@@ -148,7 +148,7 @@ namespace CinemaProjectWpf.ViewModel
                 count++;
             }
         }
-
+        
         public void MovieCommand()
         {
             DataBase = new FakeRepo();
