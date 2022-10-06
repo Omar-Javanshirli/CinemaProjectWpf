@@ -31,7 +31,7 @@ namespace CinemaProjectWpf.ViewModel
         public RelayCommand UniversalStudioCommand { get; set; }
         public RelayCommand PixarCommand { get; set; }
         public RelayCommand ViuCommand { get; set; }
-        public RelayCommand Desneycommand { get; set; }
+        public RelayCommand DisneyCommand { get; set; }
 
         public AppViewModel(MainWindow mainWindow)
         {
@@ -85,7 +85,8 @@ namespace CinemaProjectWpf.ViewModel
             CheckSearchCommand();
             SearchClick();
             AddMovieAbout(Movies);
-            AddHollywoodMoview();
+            AddAllMovie();
+
         }
 
         public void CheckSearchCommand()
@@ -148,7 +149,7 @@ namespace CinemaProjectWpf.ViewModel
             }
         }
 
-        public void AddHollywoodMoview()
+        public void AddAllMovie()
         {
             DataBase = new FakeRepo();
             Movies = new ObservableCollection<Movie>(DataBase.GetAllHollywoodMovie());
@@ -178,7 +179,40 @@ namespace CinemaProjectWpf.ViewModel
                       }
                   }
               });
+
+
+            DisneyCommand = new RelayCommand((e) =>
+            {
+                DataBase = new FakeRepo();
+                Movies = new ObservableCollection<Movie>(DataBase.GetAllDisneyMovie());
+
+                _mainWindow.filmWrap.Children.RemoveRange(0, 5);
+                _mainWindow.filmWrap2.Children.RemoveRange(0, 5);
+                int count = 0;
+
+                foreach (var item in Movies)
+                {
+                    var view = new MovieCellViewModel
+                    {
+                        Movie = item
+                    };
+                    var uc = new MovieCellUc();
+                    uc.DataContext = view;
+
+                    if (count < 5)
+                    {
+                        _mainWindow.filmWrap.Children.Add(uc);
+                        count++;
+                    }
+                    else
+                    {
+                        _mainWindow.filmWrap2.Children.Add(uc);
+                    }
+                }
+            });
         }
+
+
 
     }
 }

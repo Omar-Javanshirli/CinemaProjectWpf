@@ -123,7 +123,7 @@
 
                     <WrapPanel Width="300" Height="110" Canvas.Left="20" Canvas.Top="150">
                         <Button Style="{StaticResource myButton2}" Width="90" Height="40" Margin="5" Content="Hollywood" Command="{Binding HollywoodCommand}"/>
-                        <Button Style="{StaticResource myButton2}" Width="70" Height="40" Margin="5" Content="Desney" Command="{Binding DesneyCommand}"/>
+                        <Button Style="{StaticResource myButton2}" Width="70" Height="40" Margin="5" Content="DIsney" Command="{Binding DisneyCommand}"/>
                         <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="Pixar" Command="{Binding PixarCommand}"/>
                         <Button Style="{StaticResource myButton2}" Width="50" Height="40" Margin="5" Content="viu" Command="{Binding ViuCommand}"/>
                         <Button Style="{StaticResource myButton2}" Width="110" Height="40" Margin="5" Content="Universal Studio" Command="{Binding UniversalStudioCommand}"/>

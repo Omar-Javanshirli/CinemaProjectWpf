@@ -136,6 +136,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Image\thinkerBell.webp" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -208,6 +209,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\gona.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\aladdin.jpeg" />
+    <Resource Include="Image\encanto.jpg" />
+    <Resource Include="Image\frozen.jpg" />
+    <Resource Include="Image\lion.jpg" />
+    <Resource Include="Image\luca.jpeg" />
+    <Resource Include="Image\peterPan.png" />
+    <Resource Include="Image\pinocho.jpeg" />
+    <Resource Include="Image\soul.jpg" />
+    <Resource Include="Image\toyStory.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -180,5 +180,51 @@ namespace CinemaProjectWpf.Repository
                 }
             };
         }
+        public List<Movie> GetAllDisneyMovie()
+        {
+            return new List<Movie>
+            {
+                new Movie
+                {
+                    ImagePath="/Image/Aladdin.jpeg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/encanto.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/lion.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/luca.jpeg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/peterPan.png"
+                },
+                new Movie
+                {
+                    ImagePath="/Iamge/pinocho.jpeg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/soul.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/thinkerBell.webp"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/toyStory.jpeg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/frozen.jpg"
+                }
+            };
+        }
     }
 }
