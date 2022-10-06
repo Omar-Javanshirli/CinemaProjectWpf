@@ -77,6 +77,7 @@ namespace CinemaProjectWpf.ViewModel
 
             CheckSearchCommand();
             SearchClick();
+            AddMovieAbout(Movies);
         }
 
         public void CheckSearchCommand()
@@ -116,6 +117,27 @@ namespace CinemaProjectWpf.ViewModel
                 }
 
             });
+        }
+
+        public void AddMovieAbout(ObservableCollection<Movie> m)
+        {
+            //0,4,6
+            int count = 0;
+            foreach (var item in m)
+            {
+                MovieAboutUcViewModel view = new MovieAboutUcViewModel();
+                view.Movie = item;
+                MovieAboutUC uc = new MovieAboutUC();
+                uc.DataContext = view;
+
+                if (count == 0)
+                    _mainWindow.row1.Children.Add(uc);
+                else if (count == 4)
+                    _mainWindow.row2.Children.Add(uc);
+                else if (count == 6)
+                    _mainWindow.row3.Children.Add(uc);
+                count++;
+            }
         }
 
     }

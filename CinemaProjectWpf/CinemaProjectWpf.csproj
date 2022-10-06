@@ -78,6 +78,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserContorls\MovieAboutUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserContorls\MovieCellUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,12 +102,16 @@
     <Compile Include="UserContorls\MenuButtonUc.xaml.cs">
       <DependentUpon>MenuButtonUc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserContorls\MovieAboutUC.xaml.cs">
+      <DependentUpon>MovieAboutUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserContorls\MovieCellUc.xaml.cs">
       <DependentUpon>MovieCellUc.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AppViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\MenuButtonUcViewModel.cs" />
+    <Compile Include="ViewModel\MovieAboutUcViewModel.cs" />
     <Compile Include="ViewModel\MovieCellViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

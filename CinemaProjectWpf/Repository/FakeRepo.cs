@@ -65,7 +65,7 @@ namespace CinemaProjectWpf.Repository
                 new Movie
                 {
                     Name="La Casa De Papel",
-                    Description="Action,Violence",
+                    Description="The House of Paper') is a Spanish heist crime drama television series created by Álex Pina.",
                     Reyting="8.5",
                     ImagePath="/Image/laCaseDePapel.jpg"
                 }, 
@@ -93,7 +93,7 @@ namespace CinemaProjectWpf.Repository
                 new Movie
                 {
                     Name="MindHunter",
-                    Description="Series Killer,Matter",
+                    Description="Mindhunter is based on the 1996 book Mind Hunter: Inside the FBI's Elite Serial Crime Unit.",
                     Reyting="6.5",
                     ImagePath="/Image/mindhunter.jpg"
                 },
@@ -107,7 +107,7 @@ namespace CinemaProjectWpf.Repository
                 new Movie
                 {
                     Name="Visa A Vis",
-                    Description="Matter,Vieolence",
+                    Description="The Visa Information System (VIS) is a system for the exchange of visa data between Schengen State",
                     Reyting="7.5",
                     ImagePath="/Image/visaAvis.jpg"
                 },
