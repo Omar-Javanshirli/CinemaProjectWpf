@@ -157,6 +157,26 @@ namespace CinemaProjectWpf.Repository
                 new Movie
                 {
                     ImagePath="/Image/avatar.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/darknight.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/Searching.png"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/gona.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/ted.jpg"
+                },
+                new Movie
+                {
+                    ImagePath="/Image/capitan.jpg"
                 }
             };
         }

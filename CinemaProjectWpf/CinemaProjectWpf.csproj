@@ -200,5 +200,14 @@
     <Resource Include="Image\pirates.jpg" />
     <Resource Include="Image\spiderman.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\capitan.jpg" />
+    <Resource Include="Image\darknight.jpg" />
+    <Resource Include="Image\Searching.png" />
+    <Resource Include="Image\ted.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\gona.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

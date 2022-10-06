@@ -15,7 +15,7 @@ using System.Windows.Media;
 
 namespace CinemaProjectWpf.ViewModel
 {
-    public class AppViewModel:BaseViewModel
+    public class AppViewModel : BaseViewModel
     {
         public FakeRepo DataBase { get; set; }
         public ObservableCollection<MenuButtonClass> MenuButtons { get; set; }
@@ -55,7 +55,7 @@ namespace CinemaProjectWpf.ViewModel
                     Label label = new Label();
                     label.Content = "other";
                     label.Foreground = Brushes.LightGray;
-                    label.Margin = new System.Windows.Thickness(35,0, 0, 0);
+                    label.Margin = new System.Windows.Thickness(35, 0, 0, 0);
                     label.FontStyle = FontStyles.Italic;
                     label.FontFamily = new FontFamily("Verdana");
                     _mainWindow.menuButtonSp.Children.Add(label);
@@ -155,6 +155,8 @@ namespace CinemaProjectWpf.ViewModel
             HollywoodCommand = new RelayCommand((e) =>
               {
                   _mainWindow.filmWrap.Children.RemoveRange(0, 5);
+                  _mainWindow.filmWrap2.Children.RemoveRange(0, 5);
+                  int count = 0;
 
                   foreach (var item in Movies)
                   {
@@ -165,11 +167,17 @@ namespace CinemaProjectWpf.ViewModel
                       var uc = new MovieCellUc();
                       uc.DataContext = view;
 
-                      _mainWindow.filmWrap.Children.Add(uc);
+                      if (count < 5)
+                      {
+                          _mainWindow.filmWrap.Children.Add(uc);
+                          count++;
+                      }
+                      else
+                      {
+                          _mainWindow.filmWrap2.Children.Add(uc);
+                      }
                   }
               });
-
-
         }
 
     }
