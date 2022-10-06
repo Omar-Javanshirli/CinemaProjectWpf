@@ -1,5 +1,7 @@
-﻿using CinemaProjectWpf.Model;
+﻿using CinemaProjectWpf.Command;
+using CinemaProjectWpf.Model;
 using CinemaProjectWpf.Repository;
+using CinemaProjectWpf.Service;
 using CinemaProjectWpf.UserContorls;
 using System;
 using System.Collections.Generic;
@@ -19,6 +21,10 @@ namespace CinemaProjectWpf.ViewModel
         public ObservableCollection<MenuButtonClass> MenuButtons { get; set; }
         public ObservableCollection<Movie> Movies { get; set; }
         public MainWindow _mainWindow;
+
+        public RelayCommand SearchMosueEnterCommand { get; set; }
+        public RelayCommand SearchMosueLeaveCommand { get; set; }
+        public RelayCommand SearchClickCommand { get; set; }
 
         public AppViewModel(MainWindow mainWindow)
         {
@@ -68,6 +74,49 @@ namespace CinemaProjectWpf.ViewModel
                     _mainWindow.filmWrap2.Children.Add(uc);
                 }
             }
+
+            CheckSearchCommand();
+            SearchClick();
         }
+
+        public void CheckSearchCommand()
+        {
+            SearchMosueEnterCommand = new RelayCommand((e) =>
+            {
+                if (_mainWindow.searchTb.Text == "Search...")
+                    _mainWindow.searchTb.Text = String.Empty;
+            });
+
+            SearchMosueLeaveCommand = new RelayCommand((e) =>
+            {
+                if (_mainWindow.searchTb.Text == String.Empty)
+                    _mainWindow.searchTb.Text = "Search...";
+            });
+        }
+
+        public void SearchClick()
+        {
+            SearchClickCommand = new RelayCommand((e) =>
+            {
+                var movies = MovieService.GetMovies(_mainWindow.searchTb.Text);
+
+                _mainWindow.filmWrap.Children.RemoveRange(0, 5);
+
+                foreach (var m in movies)
+                {
+                    var ucVm = new MovieCellViewModel
+                    {
+                        Movie = m,
+                    };
+
+                    var uc = new MovieCellUc();
+                    uc.DataContext = ucVm;
+
+                    _mainWindow.filmWrap.Children.Add(uc);
+                }
+
+            });
+        }
+
     }
 }
