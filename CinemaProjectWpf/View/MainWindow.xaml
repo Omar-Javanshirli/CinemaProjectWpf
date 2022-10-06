@@ -142,7 +142,7 @@
                     <StackPanel Grid.Row="1" x:Name="row2"/>
                 </Grid>
 
-                <Grid Grid.Row="2" x:Name="row3"></Grid>
+                <Grid Grid.Row="2" x:Name="row3"></Grid> 
             </Grid>
         </Border>
     </Grid>
