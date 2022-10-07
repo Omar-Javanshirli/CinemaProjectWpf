@@ -7,11 +7,13 @@
              mc:Ignorable="d" Height="139" Width="122">
 
     <Grid>
-        <Border CornerRadius="8,8,8,8" Margin="10">
-            <Border.Background>
-                <ImageBrush Stretch="Fill" ImageSource="{Binding Movie.ImagePath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-            </Border.Background>
-        </Border>
+
+            <Border CornerRadius="8,8,8,8" Margin="10">
+                <Border.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="{Binding Movie.ImagePath,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                </Border.Background>
+            </Border>
+            <Button Style="{StaticResource myButton2}" Content="Buy" Command="{Binding BuyCommand}"></Button>
     </Grid>
 </UserControl>
 

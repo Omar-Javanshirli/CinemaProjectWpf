@@ -1,0 +1,33 @@
+﻿<Window x:Class="CinemaProjectWpf.View.BuyTicketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaProjectWpf.View"
+        mc:Ignorable="d"
+        Title="BuyTicketWindow" Height="720" Width="1014" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowsTransparency="True" 
+        WindowStyle="None" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            
+        </Grid>
+
+        <Canvas Background="#151c26">
+            <TextBlock Text="About" FontSize="20" Foreground="#5d6167" FontFamily="Verdana" FontStyle="Italic" Canvas.Left="90"
+                       Canvas.Top="30"/>
+            <Button >
+                
+            </Button>
+        </Canvas>
+    </Grid>
+</Window>
