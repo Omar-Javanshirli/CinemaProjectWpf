@@ -151,10 +151,11 @@ namespace CinemaProjectWpf.ViewModel
         
         public void MovieCommand()
         {
-            DataBase = new FakeRepo();
-            Movies = new ObservableCollection<Movie>(DataBase.GetAllHollywoodMovie());
+
             HollywoodCommand = new RelayCommand((e) =>
               {
+                  DataBase = new FakeRepo();
+                  Movies = new ObservableCollection<Movie>(DataBase.GetAllHollywoodMovie());
                   _mainWindow.filmWrap.Children.RemoveRange(0, 5);
                   _mainWindow.filmWrap2.Children.RemoveRange(0, 5);
                   int count = 0;
