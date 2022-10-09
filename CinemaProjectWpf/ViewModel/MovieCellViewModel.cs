@@ -20,7 +20,8 @@ namespace CinemaProjectWpf.ViewModel
             {
                 var view = new BuyTicketWindowViewModel();
                 var window =new  BuyTicketWindow();
-
+                window.DataContext = view;
+                view.Movie = Movie;
                 window.Show();
                 
             });

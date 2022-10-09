@@ -12,5 +12,7 @@ namespace CinemaProjectWpf.Model
         public string Description { get; set; }
         public string ImagePath { get; set; }
         public string Reyting { get; set; }
+        public string Genre { get; set; }
+        public string Duration { get; set; }
     }
 }

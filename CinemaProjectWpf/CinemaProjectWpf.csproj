@@ -229,5 +229,11 @@
     <Resource Include="Image\soul.jpg" />
     <Resource Include="Image\toyStory.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\clock.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
