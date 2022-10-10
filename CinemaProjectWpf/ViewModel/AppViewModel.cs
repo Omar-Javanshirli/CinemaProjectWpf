@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace CinemaProjectWpf.ViewModel
@@ -213,6 +214,24 @@ namespace CinemaProjectWpf.ViewModel
             });
         }
 
+        private RelayCommand command;
+
+        public ICommand Command
+        {
+            get
+            {
+                if (command == null)
+                {
+                    command = new RelayCommand(PerformCommand);
+                }
+
+                return command;
+            }
+        }
+
+        private void PerformCommand(object commandParameter)
+        {
+        }
 
 
     }
