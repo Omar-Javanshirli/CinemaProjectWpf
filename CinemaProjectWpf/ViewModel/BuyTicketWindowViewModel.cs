@@ -18,6 +18,7 @@ namespace CinemaProjectWpf.ViewModel
         public RelayCommand RowButoonCommand { get; set; }
         public RelayCommand CheckOutCommand { get; set; }
         public UniformGrid UniformGrid { get; set; }
+        public List<string> SerialNumber { get; set; } = new List<string>();
         public int Count { get; set; } = 0;
 
         private string ticketNumber;
@@ -25,8 +26,8 @@ namespace CinemaProjectWpf.ViewModel
         public string TicketNumber
         {
             get { return ticketNumber; }
-            set { ticketNumber = value; }
-        }
+            set { ticketNumber = value; OnPropertyChanged(); }
+        } 
 
 
         public Button GetButton(Button button)
@@ -37,8 +38,10 @@ namespace CinemaProjectWpf.ViewModel
             {
                 if (item is Button bt)
                 {
+                    
                     if (bt.Content == button.Content)
                         return bt;
+ 
                 }
             }
             return null;
@@ -46,10 +49,15 @@ namespace CinemaProjectWpf.ViewModel
 
         public BuyTicketWindowViewModel()
         {
-            
+             
             CheckOutCommand = new RelayCommand((e) =>
             {
-                TicketNumber = Count.ToString();
+                TicketNumber = Count.ToString() + " Ticket" + " Row:";
+
+                foreach (var item in SerialNumber)
+                {
+                    TicketNumber += item + "/";
+                }
             });
 
             RowButoonCommand = new RelayCommand((e) =>
@@ -58,6 +66,7 @@ namespace CinemaProjectWpf.ViewModel
                 var btn = e as Button;
                 var button = GetButton(btn);
                 button.Background = Brushes.LightSeaGreen;
+                SerialNumber.Add(button.Content.ToString());
             });
         }
     }
