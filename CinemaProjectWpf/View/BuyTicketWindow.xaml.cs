@@ -23,8 +23,9 @@ namespace CinemaProjectWpf.View
         public BuyTicketWindow()
         {
             InitializeComponent();
-            this.DataContext = new BuyTicketWindowViewModel();
-            
+            var vm = new BuyTicketWindowViewModel();
+            vm.UniformGrid = myUniform;
+            this.DataContext = vm;
         }
 
     }

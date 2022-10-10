@@ -19,11 +19,11 @@ namespace CinemaProjectWpf.ViewModel
             BuyCommand = new RelayCommand((e) =>
             {
                 var view = new BuyTicketWindowViewModel();
-                var window =new  BuyTicketWindow();
+                var window = new BuyTicketWindow();
                 window.DataContext = view;
                 view.Movie = Movie;
                 window.Show();
-                
+
             });
         }
     }
