@@ -18,6 +18,16 @@ namespace CinemaProjectWpf.ViewModel
         public RelayCommand RowButoonCommand { get; set; }
         public RelayCommand CheckOutCommand { get; set; }
         public UniformGrid UniformGrid { get; set; }
+        public int Count { get; set; } = 0;
+
+        private string ticketNumber;
+
+        public string TicketNumber
+        {
+            get { return ticketNumber; }
+            set { ticketNumber = value; }
+        }
+
 
         public Button GetButton(Button button)
         {
@@ -39,15 +49,15 @@ namespace CinemaProjectWpf.ViewModel
             
             CheckOutCommand = new RelayCommand((e) =>
             {
-                MessageBox.Show("...");
+                TicketNumber = Count.ToString();
             });
 
             RowButoonCommand = new RelayCommand((e) =>
             {
+                Count++;
                 var btn = e as Button;
                 var button = GetButton(btn);
-
-                button.Background = Brushes.Black;
+                button.Background = Brushes.LightSeaGreen;
             });
         }
     }
