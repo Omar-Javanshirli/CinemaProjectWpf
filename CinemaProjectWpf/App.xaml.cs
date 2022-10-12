@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 
 namespace CinemaProjectWpf
 {
@@ -13,5 +15,10 @@ namespace CinemaProjectWpf
     /// </summary>
     public partial class App : Application
     {
+        public static UniformGrid MyUniformGrid;
+        public static ComboBoxItem MetroPark;
+        public static ComboBoxItem TwoSentyabr;
+        public static ComboBoxItem Aftermoon;
+
     }
 }

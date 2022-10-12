@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -23,9 +24,13 @@ namespace CinemaProjectWpf.View
         public BuyTicketWindow()
         {
             InitializeComponent();
+
             var vm = new BuyTicketWindowViewModel();
-            vm.UniformGrid = myUniform;
             this.DataContext = vm;
+            App.MyUniformGrid = myUniform;
+            App.MetroPark = metropark;
+            App.TwoSentyabr = twoSentyabr;
+            App.Aftermoon = aftermoon;
         }
 
     }

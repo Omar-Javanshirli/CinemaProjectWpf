@@ -14,10 +14,21 @@ namespace CinemaProjectWpf.ViewModel
 {
     public class BuyTicketWindowViewModel:BaseViewModel
     {
+
+        private bool metroParkIsSelected;
+
+        public bool MetroParkIsSelected
+        {
+            get { return metroParkIsSelected; }
+            set { metroParkIsSelected = value; OnPropertyChanged(); }
+        }
+
+
+
         public Movie Movie { get; set; }
         public RelayCommand RowButoonCommand { get; set; }
         public RelayCommand CheckOutCommand { get; set; }
-        public UniformGrid UniformGrid { get; set; }
+        public RelayCommand MetroParkSelectedCommand { get; set; }
         public List<string> SerialNumber { get; set; } = new List<string>();
         public int Count { get; set; } = 0;
 
@@ -68,6 +79,18 @@ namespace CinemaProjectWpf.ViewModel
                 button.Background = Brushes.LightSeaGreen;
                 SerialNumber.Add(button.Content.ToString());
             });
+            SelectedMetroPark();
+        }
+
+        public void SelectedMetroPark()
+        {
+            MetroParkSelectedCommand = new RelayCommand((e) =>
+              {
+                  if (App.MetroPark.IsSelected==true && App.TwoSentyabr.IsSelected == true && App.Aftermoon.IsSelected == true)
+                  {
+
+                  }
+              });
         }
     }
 }

@@ -66,21 +66,21 @@
 
                     <Canvas>
                         <ComboBox x:Name="mallCombobox" Canvas.Top="40" Canvas.Left="100" FontFamily="Verdana" FontStyle="Italic" >
-                            <ComboBoxItem Content="Metro Park" IsSelected="True">
+                            <ComboBoxItem Content="Metro Park" IsSelected="True" x:Name="metropark">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected">
                                         <i:InvokeCommandAction Command="{Binding MetroParkSelectedCommand}"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>
-                            <ComboBoxItem Content="Park Cinema">
+                            <ComboBoxItem Content="Park Cinema" IsSelected="False" >
                                 <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
+                                    <i:EventTrigger EventName="Selected" >
                                         <i:InvokeCommandAction Command="{Binding ParkCinemaSelectedCommand}"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>
-                            <ComboBoxItem Content="28 Mall">
+                            <ComboBoxItem Content="28 Mall" IsSelected="False">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected">
                                         <i:InvokeCommandAction Command="{Binding MallSelectedCommand}"/>
@@ -90,7 +90,7 @@
                         </ComboBox>
 
                         <ComboBox x:Name="dateCombobox" FontFamily="Verdana" FontStyle="Italic" Canvas.Left="300" Canvas.Top="40">
-                            <ComboBoxItem Content="2/Sentyabr/2022" IsSelected="True">
+                            <ComboBoxItem Content="2/Sentyabr/2022" IsSelected="True" x:Name="twoSentyabr">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected">
                                         <i:InvokeCommandAction Command="{Binding SecondSelectedCommand}"/>
@@ -114,7 +114,7 @@
                         </ComboBox>
 
                         <ComboBox x:Name="timeCombobx" FontFamily="Verdana" FontStyle="Italic" Canvas.Left="500" Canvas.Top="40">
-                            <ComboBoxItem Content="16:00" IsSelected="True">
+                            <ComboBoxItem Content="16:00" IsSelected="True" x:Name="aftermoon">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected">
                                         <i:InvokeCommandAction Command="{Binding TimeOneSelectedCommand}"/>
