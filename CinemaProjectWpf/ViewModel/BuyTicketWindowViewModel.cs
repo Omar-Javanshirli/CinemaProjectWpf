@@ -88,7 +88,7 @@ namespace CinemaProjectWpf.ViewModel
               {
                   if (App.MetroPark.IsSelected==true && App.TwoSentyabr.IsSelected == true && App.Aftermoon.IsSelected == true)
                   {
-
+                       
                   }
               });
         }
