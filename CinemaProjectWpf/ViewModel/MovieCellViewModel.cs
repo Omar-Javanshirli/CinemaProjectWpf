@@ -43,7 +43,6 @@ namespace CinemaProjectWpf.ViewModel
                                 }
                             }
                         }
-
                     }
                 }
 

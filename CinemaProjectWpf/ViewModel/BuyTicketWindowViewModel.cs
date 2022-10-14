@@ -23,6 +23,7 @@ namespace CinemaProjectWpf.ViewModel
         public RelayCommand RowButoonCommand { get; set; }
         public RelayCommand CheckOutCommand { get; set; }
         public RelayCommand MetroParkSelectedCommand { get; set; }
+        public RelayCommand ParkCinemaSelectedCommand { get; set; }
         public RelayCommand SecondSelectedCommand { get; set; }
         public RelayCommand AftermoonCommand { get; set; }
         public RelayCommand BackCommand { get; set; }
@@ -75,6 +76,7 @@ namespace CinemaProjectWpf.ViewModel
             SelectedMetroPark();
             SelectedTwoSentyabr();
             SelectedAftermoon();
+            SelectedParkCinema();
         }
 
         public void CheckOut()
@@ -103,6 +105,40 @@ namespace CinemaProjectWpf.ViewModel
             });
         }
 
+        public void SelectedParkCinema()
+        {
+            ParkCinemaSelectedCommand = new RelayCommand((e) =>
+            {
+                Movie.Location = App.MetroPark.Content.ToString();
+                var movies = FileHelper.ReadMovies();
+
+                foreach (var grid in App.MyUniformGrid.Children)
+                {
+                    var btn = grid as Button;
+                    foreach (var movie in movies)
+                    {
+                        if (movie.Name == Movie.Name && movie.Location == App.ParkCinema.Content.ToString() && movie.DateTIme == App.TwoSentyabr.ToString() && movie.TIme == App.Aftermoon.Content.ToString())
+                        {
+                            foreach (var em in movie.EmptyPlaces)
+                            {
+                                if (btn.Content.ToString() == em)
+                                {
+                                    btn.Background = Brushes.Black;
+                                    btn.IsEnabled = false;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            btn.Background = Brushes.Transparent;
+                            btn.IsEnabled = true;
+                        }
+                    }
+                }
+
+
+            });
+        }
         public void SelectedMetroPark()
         {
             MetroParkSelectedCommand = new RelayCommand((e) =>
@@ -112,7 +148,8 @@ namespace CinemaProjectWpf.ViewModel
 
                 foreach (var movie in Movies)
                 {
-                    if (movie.Name==Movie.Name && movie.Location==App.MetroPark.Content.ToString() && movie.DateTIme==App.TwoSentyabr.ToString() && movie.TIme == App.Evning.Content.ToString(){
+                    if (movie.Name==Movie.Name && movie.Location==App.MetroPark.Content.ToString() && movie.DateTIme==App.TwoSentyabr.ToString() && movie.TIme == App.Evning.Content.ToString())
+                    {
 
                     }
                 }
