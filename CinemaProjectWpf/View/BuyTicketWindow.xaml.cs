@@ -26,11 +26,12 @@ namespace CinemaProjectWpf.View
             InitializeComponent();
 
             var vm = new BuyTicketWindowViewModel();
-            this.DataContext = vm;
             App.MyUniformGrid = myUniform;
             App.MetroPark = metropark;
             App.TwoSentyabr = twoSentyabr;
             App.Aftermoon = aftermoon;
+            App.LocationCb = mallCombobox;
+            this.DataContext = vm;
         }
 
     }

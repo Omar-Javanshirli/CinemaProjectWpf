@@ -19,6 +19,6 @@ namespace CinemaProjectWpf
         public static ComboBoxItem MetroPark;
         public static ComboBoxItem TwoSentyabr;
         public static ComboBoxItem Aftermoon;
-
+        public static ComboBox LocationCb;
     }
 }

@@ -67,7 +67,8 @@ namespace CinemaProjectWpf.Repository
                     Name="La Casa De Papel",
                     Description="The House of Paper') is a Spanish heist crime drama television series created by Álex Pina.",
                     Reyting="8.5",
-                    ImagePath="/Image/laCaseDePapel.jpg"
+                    ImagePath="/Image/laCaseDePapel.jpg",
+                    
                 }, 
                 new Movie
                 {
