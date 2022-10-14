@@ -24,7 +24,7 @@ namespace CinemaProjectWpf.ViewModel
                 var view = new BuyTicketWindowViewModel();
                 var window = new BuyTicketWindow();
                 window.DataContext = view;
-                view.Movie = Movie;
+                view.Movie = Movie
 
                 var movies = FileHelper.ReadMovies();
                 foreach (var item in App.MyUniformGrid.Children)
