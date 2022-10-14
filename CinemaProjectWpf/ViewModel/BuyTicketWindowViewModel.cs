@@ -123,7 +123,7 @@ namespace CinemaProjectWpf.ViewModel
                             {
                                 if (btn.Content.ToString() == em)
                                 {
-                                    btn.Background = Brushes.Black;
+                                    btn.Background = Brushes.Black; 
                                     btn.IsEnabled = false;
                                 }
                             }
