@@ -65,7 +65,7 @@
                     </StackPanel.Background>
 
                     <Canvas>
-                        <ComboBox x:Name="mallCombobox" Canvas.Top="40" Canvas.Left="100" FontFamily="Verdana" FontStyle="Italic" >
+                        <ComboBox x:Name="locationCombobox" Canvas.Top="40" Canvas.Left="100" FontFamily="Verdana" FontStyle="Italic" >
                             <ComboBoxItem Content="Metro Park" IsSelected="True" x:Name="metropark">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected">
@@ -73,17 +73,10 @@
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>
-                            <ComboBoxItem Content="Park Cinema" IsSelected="False" >
+                            <ComboBoxItem Content="Park Cinema" IsSelected="False" x:Name="parkCinema">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected" >
                                         <i:InvokeCommandAction Command="{Binding ParkCinemaSelectedCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="28 Mall" IsSelected="False">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding MallSelectedCommand}"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>
@@ -97,17 +90,10 @@
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>
-                            <ComboBoxItem Content="4/Sentyabr/2022">
+                            <ComboBoxItem Content="4/Sentyabr/2022" x:Name="forthSentyabr">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected">
                                         <i:InvokeCommandAction Command="{Binding ForthSelectedCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="6/Sentyabr/2022">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding SixSelectedCommand}"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>
@@ -121,17 +107,10 @@
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>
-                            <ComboBoxItem Content="18:00">
+                            <ComboBoxItem Content="18:00" x:Name="evning">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Selected">
                                         <i:InvokeCommandAction Command="{Binding TimeTwoSelectedCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="20:00">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding TimeThreeSelectedCommand}"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                             </ComboBoxItem>

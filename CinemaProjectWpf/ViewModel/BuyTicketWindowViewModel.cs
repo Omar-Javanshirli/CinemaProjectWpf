@@ -19,7 +19,7 @@ namespace CinemaProjectWpf.ViewModel
     {
 
         public Movie Movie { get; set; }
-        public List<Movie> Movies { get; set; }=new List<Movie>();
+        public List<Movie> Movies { get; set; } = new List<Movie>();
         public RelayCommand RowButoonCommand { get; set; }
         public RelayCommand CheckOutCommand { get; set; }
         public RelayCommand MetroParkSelectedCommand { get; set; }
@@ -41,7 +41,7 @@ namespace CinemaProjectWpf.ViewModel
         public Button GetButton(Button button)
         {
             var uniform = button.Parent as UniformGrid;
-            
+
             foreach (var item in uniform.Children)
             {
                 if (item is Button bt)
@@ -55,7 +55,7 @@ namespace CinemaProjectWpf.ViewModel
 
         public BuyTicketWindowViewModel()
         {
-            
+
             RowButoonCommand = new RelayCommand((e) =>
             {
                 Count++;
@@ -82,7 +82,7 @@ namespace CinemaProjectWpf.ViewModel
 
             CheckOutCommand = new RelayCommand((e) =>
             {
-                
+
                 TicketNumber = Count.ToString() + " Ticket" + " Row:";
 
                 foreach (var item in SerialNumber)
@@ -100,7 +100,6 @@ namespace CinemaProjectWpf.ViewModel
             AftermoonCommand = new RelayCommand((e) =>
             {
                 Movie.TIme = App.Aftermoon.Content.ToString();
-
             });
         }
 
@@ -109,6 +108,14 @@ namespace CinemaProjectWpf.ViewModel
             MetroParkSelectedCommand = new RelayCommand((e) =>
             {
                 Movie.Location = App.MetroPark.Content.ToString();
+                var movies = FileHelper.ReadMovies();
+
+                foreach (var movie in Movies)
+                {
+                    if (movie.Name==Movie.Name && movie.Location==App.MetroPark.Content.ToString() && movie.DateTIme==App.TwoSentyabr.ToString() && movie.TIme == App.Evning.Content.ToString(){
+
+                    }
+                }
             });
         }
 

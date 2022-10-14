@@ -32,7 +32,7 @@ namespace CinemaProjectWpf.ViewModel
                     var btn = item as Button;
                     foreach (var movie in movies)
                     {
-                        if (App.Aftermoon.IsEnabled == true && App.TwoSentyabr.IsSelected == true && App.MetroPark.IsSelected && view.Movie.Name==movie.Name)
+                        if (App.Aftermoon.IsEnabled == true && App.TwoSentyabr.IsSelected == true && App.MetroPark.IsSelected && view.Movie.Name == movie.Name)
                         {
                             foreach (var empty in movie.EmptyPlaces)
                             {
@@ -43,6 +43,7 @@ namespace CinemaProjectWpf.ViewModel
                                 }
                             }
                         }
+
                     }
                 }
 

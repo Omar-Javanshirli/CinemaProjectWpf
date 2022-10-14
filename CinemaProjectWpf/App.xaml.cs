@@ -17,8 +17,14 @@ namespace CinemaProjectWpf
     {
         public static UniformGrid MyUniformGrid;
         public static ComboBoxItem MetroPark;
+        public static ComboBoxItem ParkCinema;
         public static ComboBoxItem TwoSentyabr;
+        public static ComboBoxItem ForthSentyabr;
         public static ComboBoxItem Aftermoon;
-        public static ComboBox LocationCb;
+        public static ComboBoxItem Evning;
+
+        public static ComboBox Location;
+        public static ComboBox DateTime;
+        public static ComboBox Time;
     }
 }
