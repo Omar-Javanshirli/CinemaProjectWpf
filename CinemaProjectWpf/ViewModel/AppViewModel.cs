@@ -18,6 +18,9 @@ namespace CinemaProjectWpf.ViewModel
 {
     public class AppViewModel : BaseViewModel
     {
+
+
+
         public FakeRepo DataBase { get; set; }
         public ObservableCollection<MenuButtonClass> MenuButtons { get; set; }
         public ObservableCollection<Movie> Movies { get; set; }
