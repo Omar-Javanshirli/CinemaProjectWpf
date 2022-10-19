@@ -120,7 +120,7 @@
 
                 <Canvas Grid.Row="1" Background="{StaticResource PrimaryColor}">
                     <UniformGrid Height="300" Width="600" Canvas.Left="75" Canvas.Top="60" x:Name="myUniform">
-                        <Button x:Name="btn1" Style="{StaticResource myButton2}" Width="40" Height="40" Content="1" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn1}"></Button>
+                        <Button x:Name="btn1" Style="{StaticResource myButton2}" Width="40" Height="40" Content="1" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn1}" ></Button>
                         <Button x:Name="btn2" Style="{StaticResource myButton2}" Width="40" Height="40" Content="2" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn2}"></Button>
                         <Button x:Name="btn3" Style="{StaticResource myButton2}" Width="40" Height="40" Content="3" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn3}"></Button>
                         <Button x:Name="btn4" Style="{StaticResource myButton2}" Width="40" Height="40" Content="4" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn4}"></Button>

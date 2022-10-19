@@ -26,26 +26,31 @@ namespace CinemaProjectWpf.ViewModel
                 window.DataContext = view;
                 view.Movie = Movie;
 
-                //var movies = FileHelper.ReadMovies();
-                //foreach (var item in App.MyUniformGrid.Children)
-                //{
-                //    var btn = item as Button;
-                //    foreach (var movie in movies)
-                //    {
-                //        if (App.Aftermoon.IsEnabled == true && App.TwoSentyabr.IsSelected == true && App.MetroPark.IsSelected && view.Movie.Name == movie.Name)
-                //        {
-                //            foreach (var empty in movie.EmptyPlaces)
-                //            {
-                //                if (btn.Content.ToString() == empty)
-                //                {
-                //                    btn.Background = Brushes.Black;
-                //                    btn.IsEnabled = false;
-                //                }
-                //            }
-                //        }
-                //    }
-                //}
-
+                if (App.MetroPark.IsSelected == true && App.TwoSentyabr.IsSelected == true && App.Aftermoon.IsSelected == true)
+                {
+                    Movie.Location = App.MetroPark.Content.ToString();
+                    Movie.DateTIme = App.TwoSentyabr.Content.ToString();
+                    Movie.TIme = App.Aftermoon.Content.ToString();
+                }
+                var movieData = FileHelper.ReadMovies();
+                foreach (var item in movieData)
+                {
+                    if (item.Name == Movie.Name && item.Location==Movie.Location && item.DateTIme==Movie.DateTIme && item.TIme==Movie.TIme)
+                    {
+                        foreach (var b in item.ReservePlace)
+                        {
+                            foreach (var grid in App.MyUniformGrid.Children)
+                            {
+                                var btn = grid as Button;
+                                if (btn.Content.ToString() == b)
+                                {
+                                    btn.IsEnabled = false;
+                                    btn.Background = Brushes.Black;
+                                }
+                            }
+                        }
+                    }
+                }
                 window.Show();
 
             });

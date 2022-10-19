@@ -17,6 +17,6 @@ namespace CinemaProjectWpf.Model
         public string Location { get; set; }
         public string DateTIme { get; set; }
         public string TIme { get; set; }
-        public List<string> EmptyPlaces { get; set; } = new List<string>();
+        public List<string> ReservePlace { get; set; } = new List<string>();
     }
 }
