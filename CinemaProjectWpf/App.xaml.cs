@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaProjectWpf.Model;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -16,16 +17,7 @@ namespace CinemaProjectWpf
     public partial class App : Application
     {
         public static UniformGrid MyUniformGrid;
-        public static ComboBoxItem MetroPark;
-        public static ComboBoxItem ParkCinema;
-        public static ComboBoxItem TwoSentyabr;
-        public static ComboBoxItem ForthSentyabr;
-        public static ComboBoxItem Aftermoon;
-        public static ComboBoxItem Evning;
-
-        public static ComboBox Location;
-        public static ComboBox DateTime;
-        public static ComboBox Time;
+        public static List<Movie> Movies { get; set; }
 
         public App()
         {

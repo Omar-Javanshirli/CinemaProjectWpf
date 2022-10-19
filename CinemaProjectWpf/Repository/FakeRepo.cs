@@ -96,7 +96,7 @@ namespace CinemaProjectWpf.Repository
                                              {
                                                   TimeName="15.00",
                                                    SeatCount=25,
-                                                   seat
+                                                 
                                              }
                                          }
                                    }

@@ -1,4 +1,5 @@
 ﻿using CinemaProjectWpf.Command;
+using CinemaProjectWpf.Helper;
 using CinemaProjectWpf.Model;
 using CinemaProjectWpf.Repository;
 using CinemaProjectWpf.Service;
@@ -6,6 +7,7 @@ using CinemaProjectWpf.UserContorls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +25,9 @@ namespace CinemaProjectWpf.ViewModel
 
         public FakeRepo DataBase { get; set; }
         public ObservableCollection<MenuButtonClass> MenuButtons { get; set; }
-        public ObservableCollection<Movie> Movies { get; set; }
         public MainWindow _mainWindow;
+
+        public ObservableCollection<Movie> Movies { get; set; }
 
         public RelayCommand SearchMosueEnterCommand { get; set; }
         public RelayCommand SearchMosueLeaveCommand { get; set; }
@@ -42,12 +45,21 @@ namespace CinemaProjectWpf.ViewModel
             _mainWindow = mainWindow;
             DataBase = new FakeRepo();
             MenuButtons = new ObservableCollection<MenuButtonClass>(DataBase.GetAllButton());
-            Movies = new ObservableCollection<Movie>(DataBase.GetAllMovie());
-
+            if (File.Exists("movies.json"))
+            {
+                Movies = new ObservableCollection<Movie>(FileHelper.ReadMovies());
+            }
+            else
+            {
+                Movies = new ObservableCollection<Movie>(DataBase.GetAllMovie());
+                FileHelper.WriteMovie(Movies.ToList());
+            }
+           
             int count = 0;
             foreach (var item in MenuButtons)
             {
                 MenuButtonUcViewModel menuButtonUcViewModel = new MenuButtonUcViewModel();
+              
                 menuButtonUcViewModel.MenuButton = item;
                 MenuButtonUc menuButtonUc = new MenuButtonUc();
                 menuButtonUc.DataContext = menuButtonUcViewModel;
@@ -71,6 +83,7 @@ namespace CinemaProjectWpf.ViewModel
             foreach (var item in Movies)
             {
                 MovieCellViewModel view = new MovieCellViewModel();
+                view.Movies = Movies.ToList();
                 view.Movie = item;
                 MovieCellUc uc = new MovieCellUc();
                 uc.DataContext = view;
@@ -152,7 +165,7 @@ namespace CinemaProjectWpf.ViewModel
                 count++;
             }
         }
-        
+
         public void MovieCommand()
         {
 

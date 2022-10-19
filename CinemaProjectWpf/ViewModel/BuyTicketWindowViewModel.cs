@@ -21,7 +21,7 @@ namespace CinemaProjectWpf.ViewModel
     {
 
         public Movie Movie { get; set; }
-        public List<Movie> Movies { get; set; } = new List<Movie>();
+
         public RelayCommand RowButoonCommand { get; set; }
         public RelayCommand CheckOutCommand { get; set; }
         public RelayCommand CinemaSelectedCommand { get; set; }
@@ -68,6 +68,7 @@ namespace CinemaProjectWpf.ViewModel
             set { ticketNumber = value; OnPropertyChanged(); }
         }
 
+        public List<Movie> Movies { get; set; }
 
         public Button GetButton(Button button)
         {
@@ -118,8 +119,8 @@ namespace CinemaProjectWpf.ViewModel
                     TicketNumber += item + "/";
                 }
 
-                Movies.Add(Movie);
-                FileHelper.WriteMovie(Movies);
+              //  Movies.Add(Movie);
+                FileHelper.WriteMovie(Movies.ToList());
             });
         }
 
@@ -156,6 +157,7 @@ namespace CinemaProjectWpf.ViewModel
                     uc.DataContext= viewModel;
                     App.MyUniformGrid.Children.Add(uc);
                 }
+                FileHelper.WriteMovie(Movies.ToList());
              }
             });
         }
