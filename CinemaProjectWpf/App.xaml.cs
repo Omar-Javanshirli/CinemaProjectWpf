@@ -26,5 +26,10 @@ namespace CinemaProjectWpf
         public static ComboBox Location;
         public static ComboBox DateTime;
         public static ComboBox Time;
+
+        public App()
+        {
+
+        }
     }
 }

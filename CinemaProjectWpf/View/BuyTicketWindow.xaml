@@ -65,62 +65,37 @@
                     </StackPanel.Background>
 
                     <Canvas>
-                        <ComboBox x:Name="locationCombobox" Canvas.Top="40" Canvas.Left="100" FontFamily="Verdana" FontStyle="Italic" >
-                            <ComboBoxItem Content="Metro Park" IsSelected="True" x:Name="metropark">
+                        <ComboBox ItemsSource="{Binding Movie.Locations}" DisplayMemberPath="LocationName" x:Name="locationCombobox" Canvas.Top="40" Canvas.Left="100" FontFamily="Verdana" FontStyle="Italic" >
+                      
                                 <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding MetroParkSelectedCommand}"/>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding CinemaSelectedCommand}" CommandParameter="{Binding ElementName=locationCombobox,Path=SelectedItem}"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="Park Cinema" IsSelected="False" x:Name="parkCinema">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected" >
-                                        <i:InvokeCommandAction Command="{Binding ParkCinemaSelectedCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
+                          
                         </ComboBox>
 
-                        <ComboBox x:Name="dateCombobox" FontFamily="Verdana" FontStyle="Italic" Canvas.Left="300" Canvas.Top="40">
-                            <ComboBoxItem Content="2/Sentyabr/2022" IsSelected="True" x:Name="twoSentyabr">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding SecondSelectedCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="4/Sentyabr/2022" x:Name="forthSentyabr">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding ForthSelectedCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
+                        <ComboBox x:Name="dateCombobox" DisplayMemberPath="DateName" ItemsSource="{Binding SelectedLocation.Dates}" FontFamily="Verdana" FontStyle="Italic" Canvas.Left="300" Canvas.Top="40">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding DateSelectedCommand}" CommandParameter="{Binding ElementName=dateCombobox,Path=SelectedItem}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </ComboBox>
 
-                        <ComboBox x:Name="timeCombobx" FontFamily="Verdana" FontStyle="Italic" Canvas.Left="500" Canvas.Top="40">
-                            <ComboBoxItem Content="16:00" IsSelected="True" x:Name="aftermoon">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding AftermoonCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
-                            <ComboBoxItem Content="18:00" x:Name="evning">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="Selected">
-                                        <i:InvokeCommandAction Command="{Binding TimeTwoSelectedCommand}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </ComboBoxItem>
+                        <ComboBox ItemsSource="{Binding SelectedDate.Times}" DisplayMemberPath="TimeName" x:Name="timeCombobx" FontFamily="Verdana" FontStyle="Italic" Canvas.Left="500" Canvas.Top="40">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectionChanged">
+                                    <i:InvokeCommandAction Command="{Binding TimeSelectedCommand}" CommandParameter="{Binding ElementName=timeCombobx,Path=SelectedItem}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </ComboBox>
                     </Canvas>
                 </StackPanel>
 
                 <Canvas Grid.Row="1" Background="{StaticResource PrimaryColor}">
                     <UniformGrid Height="300" Width="600" Canvas.Left="75" Canvas.Top="60" x:Name="myUniform">
-                        <Button x:Name="btn1" Style="{StaticResource myButton2}" Width="40" Height="40" Content="1" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn1}" ></Button>
+                        <!--<Button x:Name="btn1" Style="{StaticResource myButton2}" Width="40" Height="40" Content="1" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn1}" ></Button>
                         <Button x:Name="btn2" Style="{StaticResource myButton2}" Width="40" Height="40" Content="2" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn2}"></Button>
                         <Button x:Name="btn3" Style="{StaticResource myButton2}" Width="40" Height="40" Content="3" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn3}"></Button>
                         <Button x:Name="btn4" Style="{StaticResource myButton2}" Width="40" Height="40" Content="4" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn4}"></Button>
@@ -144,7 +119,7 @@
                         <Button x:Name="btn22" Style="{StaticResource myButton2}" Width="40" Height="40" Content="22" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn22}"></Button>
                         <Button x:Name="btn23" Style="{StaticResource myButton2}" Width="40" Height="40" Content="23" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn23}"></Button>
                         <Button x:Name="btn24" Style="{StaticResource myButton2}" Width="40" Height="40" Content="24" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn24}"></Button>
-                        <Button x:Name="btn25" Style="{StaticResource myButton2}" Width="40" Height="40" Content="25" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn25}"></Button>
+                        <Button x:Name="btn25" Style="{StaticResource myButton2}" Width="40" Height="40" Content="25" Margin="10" Command="{Binding RowButoonCommand}" CommandParameter="{Binding ElementName=btn25}"></Button>-->
                     </UniformGrid>
                 </Canvas>
 

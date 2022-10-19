@@ -2,6 +2,7 @@
 using CinemaProjectWpf.Helper;
 using CinemaProjectWpf.Model;
 using CinemaProjectWpf.Repository;
+using CinemaProjectWpf.UserContorls;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -23,9 +24,40 @@ namespace CinemaProjectWpf.ViewModel
         public List<Movie> Movies { get; set; } = new List<Movie>();
         public RelayCommand RowButoonCommand { get; set; }
         public RelayCommand CheckOutCommand { get; set; }
-        public RelayCommand ParkCinemaSelectedCommand { get; set; }
+        public RelayCommand CinemaSelectedCommand { get; set; }
+        public RelayCommand DateSelectedCommand { get; set; }
+        public RelayCommand TimeSelectedCommand { get; set; }
         public RelayCommand BackCommand { get; set; }
         public List<string> SerialNumber { get; set; } = new List<string>();
+
+        private Location selectedLocation;
+
+        public Location SelectedLocation
+        {
+            get { return selectedLocation; }
+            set { selectedLocation = value; OnPropertyChanged(); }
+        }
+
+
+        private Date selectedDate;
+
+        public Date SelectedDate
+        {
+            get { return selectedDate; }
+            set { selectedDate = value; OnPropertyChanged(); }
+        }
+
+
+        private Time selectedTime;
+
+        public Time SelectedTime
+        {
+            get { return selectedTime; }
+            set { selectedTime = value; OnPropertyChanged(); }
+        }
+
+
+
         public int Count { get; set; } = 0;
 
         private string ticketNumber;
@@ -68,7 +100,7 @@ namespace CinemaProjectWpf.ViewModel
                     button.Background = Brushes.Transparent;
 
                 SerialNumber.Add(button.Content.ToString());
-                Movie.ReservePlace.Add(button.Content.ToString());
+               // Movie.ReservePlace.Add(button.Content.ToString());
             });
             CheckOut();
             SelectedParkCinema();
@@ -94,30 +126,37 @@ namespace CinemaProjectWpf.ViewModel
 
         public void SelectedParkCinema()
         {
-            ParkCinemaSelectedCommand = new RelayCommand((e) =>
+            CinemaSelectedCommand = new RelayCommand((e) =>
             {
-                var moviesData = FileHelper.ReadMovies();
-                if (App.ParkCinema.IsEnabled == true && App.TwoSentyabr.IsEnabled == true && App.Aftermoon.IsEnabled == true)
+                SelectedLocation=e as Location;
+            });
+
+            DateSelectedCommand = new RelayCommand((e) =>
+              {
+                  SelectedDate=e as Date;   
+              });
+
+
+            TimeSelectedCommand = new RelayCommand((e) =>
+            {
+                selectedTime=e as Time;
+                var seats = selectedTime.Seats;
+                if (seats == null)
                 {
-                    Movie.Location = App.ParkCinema.Content.ToString();
-                    Movie.DateTIme = App.TwoSentyabr.Content.ToString();
-                    Movie.TIme = App.Aftermoon.Content.ToString();
-                }
-                foreach (var item in moviesData)
+                    seats=new List<Seat>();
+                
+                for (int i = 0; i < selectedTime.SeatCount; i++)
                 {
-                    if (item.Name==Movie.Name && item.Location!=Movie.Location && item.DateTIme!=Movie.DateTIme && item.TIme != Movie.TIme)
+                    seats.Add(new Seat() { No=(i+1).ToString() , Case= SeatCase.Empty});
+                    var viewModel = new SeatViewModel
                     {
-                        foreach (var grid in App.MyUniformGrid.Children)
-                        {
-                            var btn = grid as Button;
-                            if (btn.Background == Brushes.Black)
-                            {
-                                btn.IsEnabled = true;
-                                btn.Background = Brushes.Transparent;
-                            }
-                        }
-                    }
+                        Seat = seats[i]
+                    };
+                    var uc = new SeatUC();
+                    uc.DataContext= viewModel;
+                    App.MyUniformGrid.Children.Add(uc);
                 }
+             }
             });
         }
 

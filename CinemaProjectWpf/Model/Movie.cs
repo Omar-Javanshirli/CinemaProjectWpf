@@ -14,9 +14,7 @@ namespace CinemaProjectWpf.Model
         public string Reyting { get; set; }
         public string Genre { get; set; }
         public string Duration { get; set; }
-        public string Location { get; set; }
-        public string DateTIme { get; set; }
-        public string TIme { get; set; }
-        public List<string> ReservePlace { get; set; } = new List<string>();
+        public List<Location> Locations { get; set; }
     }
+
 }
