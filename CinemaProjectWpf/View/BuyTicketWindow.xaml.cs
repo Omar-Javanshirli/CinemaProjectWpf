@@ -27,16 +27,6 @@ namespace CinemaProjectWpf.View
 
             var vm = new BuyTicketWindowViewModel();
             App.MyUniformGrid = myUniform;
-            //App.MetroPark = metropark;
-            //App.ParkCinema = parkCinema;
-         //  App.TwoSentyabr = twoSentyabr;
-         ////  App.ForthSentyabr = forthSentyabr;
-         //   App.Aftermoon = aftermoon;
-       //     App.Evning = evning;
-
-           // App.Location = locationCombobox;
-           // App.DateTime = dateCombobox;
-           // App.Time = timeCombobx;
             this.DataContext = vm;
         }
 

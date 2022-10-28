@@ -18,7 +18,6 @@ namespace CinemaProjectWpf
     {
         public static UniformGrid MyUniformGrid;
         public static List<Movie> Movies { get; set; }
-
         public App()
         {
 

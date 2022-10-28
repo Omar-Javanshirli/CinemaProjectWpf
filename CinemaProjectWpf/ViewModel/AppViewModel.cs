@@ -75,7 +75,6 @@ namespace CinemaProjectWpf.ViewModel
                     label.FontStyle = FontStyles.Italic;
                     label.FontFamily = new FontFamily("Verdana");
                     _mainWindow.menuButtonSp.Children.Add(label);
-
                 }
             }
 

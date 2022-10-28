@@ -96,7 +96,7 @@ namespace CinemaProjectWpf.Repository
                                              {
                                                   TimeName="15.00",
                                                    SeatCount=25,
-                                                 
+
                                              }
                                          }
                                    }
@@ -122,71 +122,557 @@ namespace CinemaProjectWpf.Repository
                                }
                          }
                      }
-                    
-                }, 
-                //new Movie
-                //{
-                //    Name="Ozark",
-                //    Description="Violence,Action,Matter",
-                //    Reyting="7.4",
-                //    ImagePath="/Image/ozark2.jpg"
-                //},
-                //new Movie
-                //{
-                //    Name="Lupin",
-                //    Description="Action",
-                //    Reyting="7.7",
-                //    ImagePath="/Image/lupin.jpg"
-                //},
-                //new Movie
-                //{
-                //    Name="Elite",
-                //    Description="Matter,Vieolence",
-                //    Reyting="8.0",
-                //    ImagePath="/Image/elite.jpg"
-                //},
-                //new Movie
-                //{
-                //    Name="MindHunter",
-                //    Description="Mindhunter is based on the 1996 book Mind Hunter: Inside the FBI's Elite Serial Crime Unit.",
-                //    Reyting="6.5",
-                //    ImagePath="/Image/mindhunter.jpg"
-                //},
-                //new Movie
-                //{
-                //    Name="Narcos",
-                //    Description="Action,Matter",
-                //    Reyting="9.0",
-                //    ImagePath="/Image/narcos.png"
-                //},
-                //new Movie
-                //{
-                //    Name="Visa A Vis",
-                //    Description="The Visa Information System (VIS) is a system for the exchange of visa data between Schengen State",
-                //    Reyting="7.5",
-                //    ImagePath="/Image/visaAvis.jpg"
-                //},
-                //new Movie
-                //{
-                //    Name="Breaking Bad",
-                //    Description="Matter,action",
-                //    Reyting="8,4",
-                //    ImagePath="/Image/breaking.jpg"
-                //},
-                //new Movie
-                //{
-                //    Name="Adam Project",
-                //    Description="Dram,Action",
-                //    Reyting="6.7",
-                //    ImagePath="/Image/adam.jpg"
-                //},
-                //new Movie
-                //{
-                //    Name="The Rain",
-                //    Description="Action,Advantures",
-                //    Reyting="7.7",
-                //    ImagePath="/Image/rain2.jpg"
-                //}
+
+                },
+                new Movie
+                {
+                    Name="Ozark",
+                    Description="Violence,Action,Matter",
+                    Reyting="7.4",
+                    ImagePath="/Image/ozark2.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="Lupin",
+                    Description="Action",
+                    Reyting="7.7",
+                    ImagePath="/Image/lupin.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="Elite",
+                    Description="Matter,Vieolence",
+                    Reyting="8.0",
+                    ImagePath="/Image/elite.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="MindHunter",
+                    Description="Mindhunter is based on the 1996 book Mind Hunter: Inside the FBI's Elite Serial Crime Unit.",
+                    Reyting="6.5",
+                    ImagePath="/Image/mindhunter.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="Narcos",
+                    Description="Action,Matter",
+                    Reyting="9.0",
+                    ImagePath="/Image/narcos.png",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="Visa A Vis",
+                    Description="The Visa Information System (VIS) is a system for the exchange of visa data between Schengen State",
+                    Reyting="7.5",
+                    ImagePath="/Image/visaAvis.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="Breaking Bad",
+                    Description="Matter,action",
+                    Reyting="8,4",
+                    ImagePath="/Image/breaking.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="Adam Project",
+                    Description="Dram,Action",
+                    Reyting="6.7",
+                    ImagePath="/Image/adam.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                },
+                new Movie
+                {
+                    Name="The Rain",
+                    Description="Action,Advantures",
+                    Reyting="7.7",
+                    ImagePath="/Image/rain2.jpg",
+                    Locations=new List<Location>
+                     {
+                         new Location
+                         {
+                              LocationName="Cinema Plus",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="19.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="16.00",
+                                                   SeatCount=25
+                                             }
+                                         }
+                                   },
+                                   new Date
+                                   {
+                                        DateName="10.10.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="15.00",
+                                                   SeatCount=25,
+
+                                             }
+                                         }
+                                   }
+                               }
+                         },
+                         new Location
+                         {
+                              LocationName="Metro Park",
+                               Dates=new List<Date>
+                               {
+                                   new Date
+                                   {
+                                        DateName="10.5.2022",
+                                         Times=new List<Time>
+                                         {
+                                             new Time
+                                             {
+                                                  TimeName="19.00",
+                                                   SeatCount=20
+                                             }
+                                         }
+                                   }
+                               }
+                         }
+                     }
+                }
             };
         }
         public List<Movie> GetAllHollywoodMovie()

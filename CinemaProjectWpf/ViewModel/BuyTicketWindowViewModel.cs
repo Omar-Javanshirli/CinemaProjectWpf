@@ -101,7 +101,6 @@ namespace CinemaProjectWpf.ViewModel
                     button.Background = Brushes.Transparent;
 
                 SerialNumber.Add(button.Content.ToString());
-               // Movie.ReservePlace.Add(button.Content.ToString());
             });
             CheckOut();
             SelectedParkCinema();
@@ -118,8 +117,6 @@ namespace CinemaProjectWpf.ViewModel
                 {
                     TicketNumber += item + "/";
                 }
-
-              //  Movies.Add(Movie);
                 FileHelper.WriteMovie(Movies.ToList());
             });
         }
